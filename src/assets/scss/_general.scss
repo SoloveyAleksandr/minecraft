@@ -1,0 +1,44 @@
+@import "./vars";
+
+*,
+*::after,
+*::before {
+  font-family: 'Manrope', sans-serif;
+  color: $black;
+  line-height: 100%;
+}
+
+.container {
+  max-width: 171.8rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.default-btn {
+  padding: 2rem 5.5rem;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: $f-m;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: fit-content;
+  min-width: 29.8rem;
+  background-color: $white;
+
+  & svg {
+    width: 3.2rem;
+    height: 1.6rem;
+    object-fit: contain;
+    object-position: center center;
+    fill: $blue;
+    transition: .3s;
+  }
+
+  &:hover {
+    svg {
+      transform: translate(1.5rem, 0);
+    }
+  }
+}
