@@ -1,0 +1,45 @@
+@import "../vars";
+
+.advantages {
+  background-color: $grey;
+  padding: 16rem 0;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  &-title {
+    font-size: 6.4rem;
+    font-weight: $f-s;
+    line-height: 8.7rem;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+
+    &-item {
+      height: 26rem;
+      background-color: $white;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      &__value {
+        font-size: 5.6rem;
+        font-weight: $f-b;
+        line-height: 7.6rem;
+        color: $blue;
+      }
+
+      &__description {
+        font-size: 2rem;
+        line-height: 2.7rem;
+      }
+    }
+  }
+}

@@ -60,4 +60,130 @@
       max-width: 60rem;
     }
   }
+
+  &-catalog {
+    padding-top: 16rem;
+    margin-bottom: 19rem;
+
+    &-title {
+      font-size: 6.4rem;
+      font-weight: $f-s;
+      line-height: 8.7rem;
+      margin-bottom: 6.3rem;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6.2rem;
+
+      &-item {
+        padding: 0 17.75rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 8rem;
+        border-left: 0.2rem solid $grey;
+        border-right: 0.2rem solid $grey;
+
+        &-inner {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+
+        &-img {
+          width: 78.3rem;
+          height: 52.2rem;
+
+          &__img {
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__title {
+          font-size: 4.8rem;
+          font-weight: $f-m;
+          line-height: 6.6rem;
+          margin-bottom: 4rem;
+        }
+
+        &__links {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        &__link {
+          font-size: 2rem;
+          line-height: 2.7rem;
+          font-weight: $f-r;
+          transition: .3s;
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          &_icon {
+            margin-top: auto;
+            margin-left: auto;
+
+            svg {
+              width: 8.7rem;
+              height: 1.6rem;
+              fill: $blue;
+              transition: .3s;
+            }
+
+            &:hover {
+              svg {
+                transform: translate(1rem, 0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-partners {
+    margin-bottom: 16rem;
+    overflow: hidden;
+
+    &-title {
+      font-size: 6.4rem;
+      line-height: 8.7rem;
+      font-weight: $f-s;
+      margin-bottom: 6rem;
+    }
+
+    &-list {
+
+      &-item {
+        height: 25.5rem;
+        width: 25.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__img {
+          object-fit: contain;
+          width: 84.31%;
+          height: 84.31%;
+        }
+      }
+    }
+  }
+}
+
+.slider {
+  padding: 50rem 0;
+}
+
+.swiper {
+  &-slide {
+    font-size: 6rem;
+  }
 }
