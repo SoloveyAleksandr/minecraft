@@ -9,6 +9,11 @@
   line-height: 100%;
 }
 
+html {
+  background-color: $white;
+  // background-color: rgb(56, 56, 56);
+}
+
 .container {
   max-width: 171.8rem;
   margin: 0 auto;
@@ -42,6 +47,16 @@
   &:hover {
     svg {
       transform: translate(1.5rem, 0);
+    }
+  }
+
+  @include breakpoint($xl-bp) {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+
+    & svg {
+      width: 3rem;
+      height: 1.4rem;
     }
   }
 }

@@ -20,26 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (document.querySelector('.main-reviews')) {
-    const container = document.querySelector('.main-reviews-list-container');
-    const listNode = document.querySelector('.main-reviews-list');
-    container.appendChild(listNode.cloneNode(true));
-
-    const animLists = gsap.utils.toArray('.main-reviews-list');
-    const speed = listNode.children.length * 4;
-    const TL = gsap.timeline({
-      repeat: -1,
-    })
-
-    animLists.forEach(list => {
-      TL.to(list, {
-        x: '100%',
-        ease: 'none',
-        duration: speed,
-      }, 'sin')
-    });
-  }
-
   if (document.querySelector('.main-contacts-info-swiper')) {
     const swiper = new Swiper('.main-contacts-info-swiper', {
       allowTouchMove: false,
@@ -60,7 +40,28 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.onclick = () => handleClick(btn, index);
     })
   }
+  //<==
 
-  
+  // ADVANTAGES
+  if (document.querySelector('.advantages')) {
+    const items = gsap.utils.toArray('.advantages-list-item').reverse();;
+    const mainTL = gsap.timeline({
+      scrollTrigger: {
+        start: "top 50%",
+        end: "bottom 50%",
+        trigger: '.advantages',
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    items.forEach((item, index) => {
+      mainTL.from(item, {
+        x: "-=50vw",
+        opacity: 0,
+        duration: 1.8,
+        delay: index * 0.5
+      }, 'sin')
+    })
+  }
   //<==
 })

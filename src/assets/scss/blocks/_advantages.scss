@@ -4,22 +4,47 @@
   background-color: $grey;
   padding: 16rem 0;
 
+  @include breakpoint($xl-bp) {
+    padding: 7.5rem 0;
+  }
+
   &-container {
     display: flex;
     flex-direction: column;
     gap: 6rem;
+
+    @include breakpoint($xl-bp) {
+      gap: 3rem;
+    }
   }
 
   &-title {
     font-size: 6.4rem;
     font-weight: $f-s;
     line-height: 8.7rem;
+
+    @include breakpoint($xl-bp) {
+      font-size: 3.4rem;
+      line-height: 4.6rem;
+    }
   }
 
   &-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
+
+    @include breakpoint($cos-bp) {
+      gap: 2rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($sm-bp) {
+      grid-template-columns: 1fr;
+    }
 
     &-item {
       height: 26rem;
@@ -29,16 +54,35 @@
       flex-direction: column;
       gap: 1.5rem;
 
+      @include breakpoint($cos-bp) {
+        padding: 2rem;
+      }
+
+      @include breakpoint($xl-bp) {
+        height: 16.2rem;
+        gap: 1rem;
+      }
+
       &__value {
         font-size: 5.6rem;
         font-weight: $f-b;
         line-height: 7.6rem;
         color: $blue;
+
+        @include breakpoint($xl-bp) {
+          font-size: 3.4rem;
+          line-height: 4.6rem;
+        }
       }
 
       &__description {
         font-size: 2rem;
         line-height: 2.7rem;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
       }
     }
   }
