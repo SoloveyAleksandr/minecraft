@@ -223,4 +223,92 @@
       }
     }
   }
+
+  &-contacts {
+    margin-top: 16rem;
+
+    &-title {
+      font-size: 6.4rem;
+      font-weight: $f-s;
+      line-height: 8.7rem;
+      margin-bottom: 6rem;
+    }
+
+    &-map {
+      position: relative;
+      display: flex;
+      height: 81.3rem;
+
+      &__frame {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-info {
+      position: absolute;
+      padding: 6rem;
+      background-color: $white;
+      right: 13.645%;
+      top: 18.3rem;
+
+      &-btns {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin-bottom: 4rem;
+
+        &__btn {
+          margin: 0;
+          padding: 0;
+          background-color: transparent;
+          border: none;
+          font-size: 4rem;
+          line-height: 5.5rem;
+          color: $black;
+          font-weight: $f-m;
+          opacity: 0.5;
+          transition: .3s;
+
+          &._active {
+            opacity: 1;
+            pointer-events: none;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      &-swiper {
+        width: 26.8rem;
+
+        &-slide {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+
+          &__title {
+            font-size: 2rem;
+            line-height: 2.7rem;
+            margin-bottom: 1.5rem;
+          }
+
+          &__text {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+          }
+
+          &__link {
+            transition: .3s;
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
 }
