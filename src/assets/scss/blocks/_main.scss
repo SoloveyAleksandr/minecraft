@@ -383,17 +383,32 @@
   &-contacts {
     margin-top: 16rem;
 
+    @include breakpoint($xl-bp) {
+      margin-top: 7.6rem;
+    }
+
     &-title {
       font-size: 6.4rem;
       font-weight: $f-s;
       line-height: 8.7rem;
       margin-bottom: 6rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 34px;
+        line-height: 46px;
+        margin-bottom: 3rem;
+      }
     }
 
     &-map {
       position: relative;
       display: flex;
       height: 81.3rem;
+      background-color: $grey;
+
+      @include breakpoint($xl-bp) {
+        height: 68rem;
+      }
 
       &__frame {
         width: 100%;
@@ -408,11 +423,30 @@
       right: 13.645%;
       top: 18.3rem;
 
+      @include breakpoint($cos-bp) {
+        right: 2rem;
+        top: 2rem;
+      }
+
+      @include breakpoint($xl-bp) {
+        padding: 2rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        width: calc(100% - 2rem);
+        left: 1rem;
+        top: 1rem;
+      }
+
       &-btns {
         display: flex;
         align-items: center;
         gap: 4rem;
         margin-bottom: 4rem;
+
+        @include breakpoint($xl-bp) {
+          margin-bottom: 3rem;
+        }
 
         &__btn {
           margin: 0;
@@ -434,26 +468,50 @@
           &:hover {
             opacity: 0.8;
           }
+
+          @include breakpoint($xl-bp) {
+            font-size: 2.6rem;
+            line-height: 3.6rem;
+          }
         }
       }
 
       &-swiper {
         width: 26.8rem;
 
+        @include breakpoint($sm-bp) {
+          width: 100%;
+        }
+
         &-slide {
           display: flex;
           flex-direction: column;
           gap: 3rem;
 
+          @include breakpoint($xl-bp) {
+            gap: 2rem;
+          }
+
           &__title {
             font-size: 2rem;
             line-height: 2.7rem;
             margin-bottom: 1.5rem;
+
+            @include breakpoint($xl-bp) {
+              font-size: 1.6rem;
+              line-height: 2.2rem;
+              margin-bottom: 0.5rem;
+            }
           }
 
           &__text {
             font-size: 1.6rem;
             line-height: 2.2rem;
+
+            @include breakpoint($xl-bp) {
+              font-size: 1.4rem;
+              line-height: 1.9rem;
+            }
           }
 
           &__link {

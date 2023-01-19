@@ -3,15 +3,36 @@
 .footer {
   padding: 6rem 0 1.7rem;
 
+  @include breakpoint($lb-bp) {
+    padding: 7.5rem 0 2rem;
+  }
+
   &-container {
     display: flex;
     align-items: flex-start;
     gap: 10rem;
+
+    @include breakpoint($cos-bp) {
+      gap: 4rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      flex-direction: column;
+    }
+
+    @include breakpoint($xs-bp) {
+      gap: 3rem;
+    }
   }
 
   &-logo {
     width: 9.5rem;
     height: 11.4rem;
+
+    @include breakpoint($xl-bp) {
+      width: 6.1rem;
+      height: 7.35rem;
+    }
 
     &:hover {
       svg {
@@ -33,6 +54,15 @@
     display: flex;
     align-items: flex-start;
     gap: 10rem;
+
+    @include breakpoint($cos-bp) {
+      gap: 4rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      width: 100%;
+      gap: 5.3rem;
+    }
   }
 
   &-nav {
@@ -40,16 +70,41 @@
     align-items: flex-start;
     gap: 10rem;
 
+    @include breakpoint($cos-bp) {
+      gap: 4rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      gap: 3.7rem;
+    }
+
     &-list {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+
+      @include breakpoint($lb-bp) {
+        gap: 1rem;
+      }
+
+      &:nth-child(2) &-item {
+        &__link {
+          &_main {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
 
       &-item {
         &__link {
           font-size: 1.4rem;
           line-height: 1.9rem;
           transition: .3s;
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+          }
 
           &:hover {
             opacity: 0.5;
@@ -60,6 +115,15 @@
             line-height: 2.2rem;
             margin-bottom: 0.5rem;
             display: inline-block;
+
+            @include breakpoint($xl-bp) {
+              font-size: 1.4rem;
+              line-height: 1.9rem;
+            }
+
+            @include breakpoint($lb-bp) {
+              margin-bottom: 0rem;
+            }
           }
         }
       }
@@ -72,29 +136,80 @@
     align-items: flex-start;
     gap: 10rem;
 
+    @include breakpoint($cos-bp) {
+      gap: 4rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($lb-bp) {
+      width: 100%;
+    }
+
+    @include breakpoint($xs-bp) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5rem;
+    }
+
     &-item {
       display: flex;
       flex-direction: column;
       gap: 2rem;
 
+      @include breakpoint($xs-bp) {
+        gap: 1.5rem;
+        width: fit-content;
+      }
+
       &:last-child {
         margin-top: 16.8rem;
         margin-left: auto;
+
+        @include breakpoint($xl-bp) {
+          text-align: right;
+
+          .footer-contacts__title {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+          }
+        }
+
+        @include breakpoint($jb-bp) {
+          margin-left: 0;
+          margin-top: auto;
+          text-align-last: left;
+        }
       }
     }
 
     &__title {
       font-size: 1.6rem;
       line-height: 2.2rem;
+      white-space: nowrap;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+      }
     }
 
     &__text {
       font-size: 1.4rem;
       line-height: 1.9rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+      }
     }
 
     a.footer-contacts__text,
     a.footer-contacts__title {
+      white-space: nowrap;
       transition: .3s;
 
       &:hover {

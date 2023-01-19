@@ -102,10 +102,12 @@
     &-inner {
       padding-top: 16rem;
       padding-bottom: 16rem;
+      padding-left: 0;
 
       @include breakpoint($cos-bp) {
         padding-top: 7.5rem;
         padding-bottom: 4rem;
+        padding-left: 2rem;
       }
     }
 
