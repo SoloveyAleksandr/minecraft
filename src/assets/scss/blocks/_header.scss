@@ -14,12 +14,19 @@
     width: 9.5rem;
     height: 11.4rem;
 
+    &:hover {
+      svg {
+        fill: $blue;
+      }
+    }
+
     svg {
       object-fit: contain;
       object-position: center center;
       width: 100%;
       height: 100%;
       fill: $white;
+      transition: .3s;
     }
   }
 

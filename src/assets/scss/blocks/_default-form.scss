@@ -34,14 +34,20 @@
     background-color: $white;
     font-size: 1.6rem;
     line-height: 2.2rem;
-    border: none;
-    padding: 2rem;
+    border: 0.2rem solid $white;
+    padding: 1.8rem;
     width: 100%;
+    outline: none;
+    transition: .3s;
 
     &::placeholder {
       font-size: 1.6rem;
       line-height: 2.2rem;
       color: $dark-grey;
+    }
+
+    &:focus {
+      border-color: $blue;
     }
   }
 

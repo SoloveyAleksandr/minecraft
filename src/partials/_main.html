@@ -6,7 +6,9 @@
 
   <div class="main-video-container">
     <div class="main-video-bg">
-      <img src="assets/images/main.jpg" alt="video" class="main-video-bg__video">
+      <video class="main-video-bg__video" playsinline autoplay loop muted poster="assets/images/poster.jpg">
+        <source src="assets/video/video.mp4" type="video/mp4">
+      </video>
     </div>
 
     <div class="main-video-inner">
@@ -200,8 +202,10 @@
         style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <div class="main-contacts-info">
         <div class="main-contacts-info-btns">
-          <button class="main-contacts-info-btns__btn _active">Москва</button>
-          <button class="main-contacts-info-btns__btn">ОАЭ</button>
+          <button class="main-contacts-info-btns__btn _active"
+            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2247.5111740058856!2d37.43057351608765!3d55.714868202384295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54fabbe68643b%3A0xd18eb6fead1bab76!2z0JPQttCw0YLRgdC60LDRjyDRg9C7LiwgNSwg0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8sIDEyMTQ3MQ!5e0!3m2!1sru!2sby!4v1674116955080!5m2!1sru!2sby">Москва</button>
+          <button class="main-contacts-info-btns__btn"
+            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28883.08863163467!2d55.26777586673055!3d25.190199407350896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682829c85c07%3A0xa5eda9fb3c93b69d!2z0JTRg9Cx0LDQuSDQnNC-0LvQuw!5e0!3m2!1sru!2sby!4v1674122446125!5m2!1sru!2sby">ОАЭ</button>
         </div>
 
         <div class="swiper main-contacts-info-swiper">
