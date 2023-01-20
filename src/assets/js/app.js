@@ -15,11 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     init() {
       this.maxH = [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem";
       this.btn.onclick = this.handleClick.bind(this);
-      this.close();
+      if (this.btn.getAttribute('data-open-default') !== null) {
+        this.open();
+      } else this.close();
     }
 
     handleClick() {
-      console.log('click')
       if (this.btn.classList.contains('_active')) {
         this.close();
       } else {
@@ -65,6 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
           return [...acc, newClass];
         }, []);
         this.btn.onclick = this.handleClick.bind(this);
+        if (this.btn.getAttribute('data-open-default') !== null) {
+          this.open();
+        } else this.close();
       }
 
       handleClick() {
@@ -95,23 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
     class MenuController {
       constructor(items) {
         this.items = items.reduce((acc, item, index) => [...acc, new MenuContainer(item, index, this.close.bind(this))], []);
-        this.init();
-      }
-
-      init() {
-        this.items.forEach(item => {
-          if (item.btn.getAttribute('data-open-default') !== null) {
-            item.open()
-          } else item.close();
-        })
       }
 
       close(id) {
-        this.items.forEach(item => {
-          if (item.id !== id) {
-            item.close();
-          }
-        })
+        if (this.items) {
+          this.items.forEach(item => {
+            if (item.id !== id) {
+              item.close();
+            }
+          })
+        }
       }
     }
 
