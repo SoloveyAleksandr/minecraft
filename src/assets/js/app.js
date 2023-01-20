@@ -99,7 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       init() {
-        this.items.forEach(item => item.close())
+        this.items.forEach(item => {
+          if (item.btn.getAttribute('data-open-default') !== null) {
+            item.open()
+          } else item.close();
+        })
       }
 
       close(id) {
