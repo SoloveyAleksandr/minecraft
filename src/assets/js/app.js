@@ -1,4 +1,120 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const MENU = document.querySelector('.menu');
+  const MENU_CLOSE_BTN = document.querySelector('.menu-btn');
+  const MENU_OPEN_BTN = document.querySelector('.header-menu-btn');
+  const MENU_BG = document.querySelector('.menu-bg');
+
+  function toggleMenu() {
+    MENU.classList.toggle('_active');
+  }
+
+  MENU_OPEN_BTN.onclick = toggleMenu;
+  MENU_CLOSE_BTN.onclick = toggleMenu;
+  MENU_BG.onclick = toggleMenu;
+
+  // MENU
+  if (MENU) {
+    class MenuDropdown {
+      constructor(container) {
+        this.btn = container.querySelector('.menu-nav-dropdown-btn');
+        this.content = container.querySelector('.menu-nav-dropdown-content');
+        // console.log(this.btn)
+
+        this.init();
+      }
+
+      init() {
+        this.maxH = [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem";
+        // this.btn.onclick = (e) => console.log(e.target);
+        this.btn.onclick = this.handleClick.bind(this);
+        this.close();
+      }
+
+      handleClick() {
+        console.log('click')
+        if (this.btn.classList.contains('_active')) {
+          this.close();
+        } else {
+          this.open();
+        }
+      }
+
+      close() {
+        this.btn.classList.remove('_active');
+        this.content.style.maxHeight = 0;
+      }
+
+      open() {
+        this.btn.classList.add('_active');
+        this.content.style.maxHeight = this.maxH;
+      }
+    }
+
+    class MenuContainer {
+      constructor(container, id, closeTrigger) {
+        this.id = id;
+        this.closeTrigger = closeTrigger;
+        this.btn = container.querySelector('.menu-nav__btn');
+        this.content = container.querySelector('.menu-nav-item-content');
+        this.dropdownChildrenContainers = this.content.querySelectorAll('.menu-nav-dropdown');
+        this.init();
+      }
+
+      init() {
+        this.maxH = [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem";
+        this.dropdownChildren = [...this.dropdownChildrenContainers].reduce((acc, item) => {
+          const newClass = new MenuDropdown(item);
+          return [...acc, newClass];
+        }, []);
+        this.btn.onclick = this.handleClick.bind(this);
+      }
+
+      handleClick() {
+        if (this.btn.classList.contains('_active')) {
+          this.close();
+        } else {
+          this.open();
+        }
+      }
+
+      open() {
+        this.closeTrigger(this.id);
+        this.btn.classList.add('_active');
+        this.content.classList.add('_active');
+        this.content.style.maxHeight = this.maxH;
+      }
+
+      close() {
+        this.btn.classList.remove('_active');
+        this.content.style.maxHeight = 0;
+        this.content.classList.remove('_active');
+        this.dropdownChildren.forEach(item => {
+          item.close();
+        })
+      }
+    }
+
+    class MenuController {
+      constructor(items) {
+        this.items = items.reduce((acc, item, index) => [...acc, new MenuContainer(item, index, this.close.bind(this))], []);
+      }
+
+      close(id) {
+        this.items.forEach(item => {
+          if (item.id !== id) {
+            item.close();
+          }
+        })
+      }
+    }
+
+    const items = gsap.utils.toArray('.menu-nav-item');
+
+    new MenuController(items);
+  }
+  //<==
+
+
   // MAIN
   if (document.querySelector('.main-partners')) {
     const container = document.querySelector('.main-partners-list-container');
