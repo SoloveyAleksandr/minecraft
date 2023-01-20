@@ -185,4 +185,32 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   //<==
+
+  // REVIEWS
+  if (document.querySelector('.reviews-list-container')) {
+    const swiper = new Swiper('.reviews-list-container', {
+      spaceBetween: 20,
+      freeMode: true,
+      navigation: {
+        nextEl: '.reviews-btns__btn_next',
+        prevEl: '.reviews-btns__btn_prev',
+      },
+      grid: {
+        rows: 2,
+      },
+      slidesPerView: 2,
+
+      breakpoints: {
+        501: {
+          grid: {
+            fill: 'row',
+            rows: 1
+          },
+          spaceBetween: 30,
+          slidesPerView: 'auto',
+        }
+      }
+    })
+  }
+  //<==
 })

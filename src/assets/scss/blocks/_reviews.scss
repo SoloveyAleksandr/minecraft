@@ -1,0 +1,104 @@
+.reviews {
+
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-btns {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    &__btn {
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      width: 3rem;
+      height: 1.5rem;
+      transition: .3s;
+
+      svg {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        fill: $blue;
+      }
+
+      &:first-child {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &.swiper-button-disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 6.4rem;
+    line-height: 8.7rem;
+    font-weight: $f-s;
+    margin-bottom: 6rem;
+
+    @include breakpoint($xl-bp) {
+      font-size: 3.4rem;
+      line-height: 4.6rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &-list {
+
+    @include breakpoint($sm-bp) {
+      max-height: 70rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      max-height: 50rem;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    &-item {
+      width: 39.8rem;
+
+      @include breakpoint($xl-bp) {
+        width: 25rem;
+      }
+
+      @include breakpoint($lb-bp) {
+        width: 20rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        width: 100%;
+      }
+
+      &__link {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      &__img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
