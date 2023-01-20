@@ -97,6 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
     class MenuController {
       constructor(items) {
         this.items = items.reduce((acc, item, index) => [...acc, new MenuContainer(item, index, this.close.bind(this))], []);
+        this.init();
+      }
+
+      init() {
+        this.items.forEach(item => item.close())
       }
 
       close(id) {
