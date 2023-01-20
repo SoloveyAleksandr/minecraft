@@ -30,6 +30,7 @@
     opacity: 0;
     pointer-events: none;
     transition: .3s;
+    backdrop-filter: blur(0.3rem)
   }
 
   &-container {

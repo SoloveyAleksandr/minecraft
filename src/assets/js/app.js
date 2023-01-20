@@ -4,6 +4,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const MENU_OPEN_BTN = document.querySelector('.header-menu-btn');
   const MENU_BG = document.querySelector('.menu-bg');
 
+  class Dropdown {
+    constructor(container) {
+      this.btn = container.querySelector('.menu-nav-dropdown-btn');
+      this.content = container.querySelector('.menu-nav-dropdown-content');
+
+      this.init();
+    }
+
+    init() {
+      this.maxH = [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem";
+      this.btn.onclick = this.handleClick.bind(this);
+      this.close();
+    }
+
+    handleClick() {
+      console.log('click')
+      if (this.btn.classList.contains('_active')) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+
+    close() {
+      this.btn.classList.remove('_active');
+      this.content.style.maxHeight = 0;
+    }
+
+    open() {
+      this.btn.classList.add('_active');
+      this.content.style.maxHeight = this.maxH;
+    }
+  }
+
   function toggleMenu() {
     MENU.classList.toggle('_active');
   }
@@ -14,42 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // MENU
   if (MENU) {
-    class MenuDropdown {
-      constructor(container) {
-        this.btn = container.querySelector('.menu-nav-dropdown-btn');
-        this.content = container.querySelector('.menu-nav-dropdown-content');
-        // console.log(this.btn)
-
-        this.init();
-      }
-
-      init() {
-        this.maxH = [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem";
-        // this.btn.onclick = (e) => console.log(e.target);
-        this.btn.onclick = this.handleClick.bind(this);
-        this.close();
-      }
-
-      handleClick() {
-        console.log('click')
-        if (this.btn.classList.contains('_active')) {
-          this.close();
-        } else {
-          this.open();
-        }
-      }
-
-      close() {
-        this.btn.classList.remove('_active');
-        this.content.style.maxHeight = 0;
-      }
-
-      open() {
-        this.btn.classList.add('_active');
-        this.content.style.maxHeight = this.maxH;
-      }
-    }
-
     class MenuContainer {
       constructor(container, id, closeTrigger) {
         this.id = id;
@@ -63,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       init() {
         this.maxH = [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem";
         this.dropdownChildren = [...this.dropdownChildrenContainers].reduce((acc, item) => {
-          const newClass = new MenuDropdown(item);
+          const newClass = new Dropdown(item);
           return [...acc, newClass];
         }, []);
         this.btn.onclick = this.handleClick.bind(this);
