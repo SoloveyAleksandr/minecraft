@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const MENU_OPEN_BTN = document.querySelector('.header-menu-btn');
   const MENU_BG = document.querySelector('.menu-bg');
 
+  const OPEN_FORM_BTNS = gsap.utils.toArray('[data-open-form]');
+  const CLOSE_MENU_BTNS = gsap.utils.toArray('[data-close-menu]');
+  const OPEN_SUBMIN_BTNS = gsap.utils.toArray('[data-open-submit]');
+
   class Dropdown {
     constructor(container) {
       this.btn = container.querySelector('.menu-nav-dropdown-btn');
@@ -46,6 +50,50 @@ document.addEventListener("DOMContentLoaded", () => {
   MENU_OPEN_BTN.onclick = toggleMenu;
   MENU_CLOSE_BTN.onclick = toggleMenu;
   MENU_BG.onclick = toggleMenu;
+
+  CLOSE_MENU_BTNS.forEach(btn => {
+    btn.addEventListener('click', toggleMenu)
+  })
+
+  class Modal {
+    constructor(container) {
+      this.container = document.querySelector(container);
+      this.bg = this.container.querySelector('.modal-bg');
+      this.btn = this.container.querySelector('.modal-btn');
+
+      this.init();
+    }
+
+    init() {
+      this.bg.onclick = this.closeModal.bind(this);
+      this.btn.onclick = this.closeModal.bind(this);
+    }
+
+    openModal() {
+      this.container.classList.add('_active');
+    }
+
+    closeModal() {
+      this.container.classList.remove('_active');
+    }
+  }
+
+  const FORM_MODAL = new Modal('.form-modal');
+  const SUBMIT_MODAL = new Modal('.submit-modal');
+
+  OPEN_FORM_BTNS.forEach(btn => {
+    btn.addEventListener("click", () => {
+      FORM_MODAL.openModal();
+    })
+  })
+
+  OPEN_SUBMIN_BTNS.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // console.log('qwer')
+      FORM_MODAL.closeModal();
+      SUBMIT_MODAL.openModal();
+    })
+  })
 
   // MENU
   if (MENU) {
@@ -117,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
     new MenuController(items);
   }
   //<==
-
 
   // MAIN
   if (document.querySelector('.main-partners')) {

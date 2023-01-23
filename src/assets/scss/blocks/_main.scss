@@ -160,6 +160,11 @@
         &-img {
           width: 78.3rem;
           height: 52.2rem;
+          overflow: hidden;
+
+          &:hover &__img {
+            transform: scale(1.05);
+          }
 
           @include breakpoint($xl-bp) {
             width: 50%;
@@ -176,6 +181,7 @@
             object-position: center center;
             width: 100%;
             height: 100%;
+            transition: .3s;
           }
         }
 

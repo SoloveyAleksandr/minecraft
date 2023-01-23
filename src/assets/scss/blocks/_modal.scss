@@ -1,0 +1,153 @@
+@import "../vars";
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+
+  &._active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.3rem);
+  }
+
+  &-btn {
+    position: absolute;
+    top: 3.7rem;
+    right: 3.7rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      svg {
+        stroke: $blue;
+      }
+    }
+
+    svg {
+      width: 1.4rem;
+      height: 1.4rem;
+      object-fit: contain;
+      fill: $black;
+      stroke: $black;
+    }
+
+    @include breakpoint($xl-bp) {
+      top: 0.2rem;
+      right: 0.2rem;
+    }
+  }
+
+  &-title {
+    font-size: 4rem;
+    line-height: 5.5rem;
+    font-weight: $f-m;
+    text-align: center;
+
+    @include breakpoint($xl-bp) {
+      font-size: 3rem;
+      line-height: 4.1rem;
+    }
+  }
+
+  &-description {
+    font-size: 2rem;
+    line-height: 2.7rem;
+    margin-top: 2rem;
+    text-align: center;
+
+    @include breakpoint($xl-bp) {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+    }
+  }
+
+  &-container {
+    position: absolute;
+    background-color: $white;
+    padding: 10rem;
+
+    @include breakpoint($xl-bp) {
+      padding: 5rem 2rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      width: calc(100% - 4rem);
+    }
+  }
+
+  &-form {
+    margin-top: 4rem;
+    width: 60.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include breakpoint($lb-bp) {
+      width: 100%;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 2rem;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      border: 0.1rem solid $dark-grey;
+      border-radius: 0;
+      background-color: transparent;
+      outline: none;
+      transition: .3s;
+
+      &:focus {
+        border-color: $blue;
+      }
+
+      &::placeholder {
+        color: $dark-grey;
+      }
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+      }
+    }
+
+    &__info {
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+    }
+
+    &__btn {
+      width: 100%;
+      color: $white;
+      background-color: $blue;
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}
