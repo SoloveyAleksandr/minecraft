@@ -89,6 +89,23 @@ html {
     gap: 3rem;
   }
 
+  &.page-head_white &{
+    &-links {
+      &__link {
+        &:last-child {
+          color: $white;
+          &::before {
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+    &__title {
+      color: $white;
+    }
+  }
+
   &-links {
     display: flex;
     align-items: center;
@@ -98,9 +115,13 @@ html {
       font-size: 1.6rem;
       line-height: 2.2rem;
       transition: .3s;
+      color: $dark-grey;
 
-      &:first-child {
-        color: $dark-grey;
+      &:last-child {
+        color: $black;
+        &::before {
+          background-color: $black;
+        }
       }
 
       &:hover {
@@ -123,7 +144,7 @@ html {
         display: block;
         height: 1.6rem;
         width: 0.2rem;
-        background-color: $black;
+        background-color: $dark-grey;
       }
     }
   }
