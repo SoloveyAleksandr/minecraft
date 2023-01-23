@@ -8,11 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
   pointer-events: none;
-  transition: .3s;
 
-  &._active {
+  &._active,
+  &._active &-bg,
+  &._active &-container {
     opacity: 1;
     pointer-events: all;
   }
@@ -25,6 +25,9 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(0.3rem);
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
   }
 
   &-btn {
@@ -89,6 +92,9 @@
     position: absolute;
     background-color: $white;
     padding: 10rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
 
     @include breakpoint($xl-bp) {
       padding: 5rem 2rem;
