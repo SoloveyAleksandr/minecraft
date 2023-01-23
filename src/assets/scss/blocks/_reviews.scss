@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 6rem;
   }
 
   &-btns {
@@ -48,7 +49,6 @@
     font-size: 6.4rem;
     line-height: 8.7rem;
     font-weight: $f-s;
-    margin-bottom: 6rem;
 
     @include breakpoint($xl-bp) {
       font-size: 3.4rem;

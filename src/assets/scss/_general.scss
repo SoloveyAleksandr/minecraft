@@ -67,3 +67,66 @@ html {
 //     <use href="#btn-arrow-icon"></use>
 //   </svg>
 // </a>
+
+.page-head {
+  padding: 3rem 0rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4rem;
+
+  @include breakpoint($xl-bp) {
+    padding: 2.8rem 0rem 3rem;
+    gap: 3rem;
+  }
+
+  &-links {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    &__link {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      transition: .3s;
+
+      &:first-child {
+        color: $dark-grey;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+      }
+    }
+
+    & a+a {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 1.6rem;
+        width: 0.2rem;
+        background-color: $black;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 4.8rem;
+    line-height: 6.6rem;
+    font-weight: $f-m;
+
+    @include breakpoint($xl-bp) {
+      font-size: 3.4rem;
+      line-height: 4.6rem;
+    }
+  }
+}

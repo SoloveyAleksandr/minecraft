@@ -259,4 +259,28 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   //<==
+
+  // ABOUT
+  if (document.querySelector('.about-partners')) {
+    const animContainers = gsap.utils.toArray('.about-partners-container');
+
+    animContainers.forEach((container, index) => {
+      const listClone = container.querySelector('.about-partners-list').cloneNode(true);
+      container.appendChild(listClone);
+      const animLists = [...container.querySelectorAll('.about-partners-list')];
+
+      const speed = listClone.children.length * 2.5;
+      const tl = gsap.timeline({
+        repeat: -1,
+      })
+      animLists.forEach(list => {
+        tl.to(list, {
+          x: index % 2 ? "100%" : "-100%",
+          duration: speed,
+          ease: "none"
+        }, 'sin')
+      })
+    })
+  }
+  //<==
 })

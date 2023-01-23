@@ -1,0 +1,149 @@
+.about {
+
+  &-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+
+    @include breakpoint($lb-bp) {
+      flex-direction: column;
+    }
+
+    &-info {
+      width: 68.3rem;
+
+      @include breakpoint($xl-bp) {
+        width: 40%;
+      }
+
+      @include breakpoint($lb-bp) {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      font-size: 6.4rem;
+      line-height: 8.7rem;
+      font-weight: $f-s;
+      margin-bottom: 4rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 3.4rem;
+        line-height: 4.6rem;
+      }
+    }
+
+    &__text {
+      font-size: 2rem;
+      line-height: 2.7rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+    }
+
+    &-img {
+      flex: 1;
+      height: 53.5rem;
+
+      @include breakpoint($lb-bp) {
+        flex: none;
+        width: 100%;
+        height: 35rem;
+      }
+
+      @include breakpoint($xs-bp) {
+        height: 32rem;
+      }
+
+      &__img {
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-bottom: 16rem;
+
+    @include breakpoint($xl-bp) {
+      gap: 3rem;
+      margin-bottom: 15rem;
+    }
+
+    &__title {
+      font-size: 6.4rem;
+      line-height: 8.7rem;
+      font-weight: $f-s;
+
+      @include breakpoint($xl-bp) {
+        font-size: 3.4rem;
+        line-height: 4.6rem;
+      }
+    }
+
+    &-container {
+      overflow: hidden;
+      display: flex;
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+
+      @include breakpoint($cos-bp) {
+        margin: 0rem -2rem;
+      }
+    }
+
+    &-list {
+      display: flex;
+      gap: 3rem;
+
+      @include breakpoint($xl-bp) {
+        gap: 2rem;
+      }
+
+      &-item {
+        width: 25.5rem;
+        height: 25.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint($xl-bp) {
+          width: 20rem;
+          height: 20rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          width: 17rem;
+          height: 17rem;
+        }
+
+        &__img {
+          object-fit: contain;
+          width: 84.31%;
+          height: 84.31%;
+        }
+      }
+    }
+  }
+
+  &-reviews {
+    margin-bottom: 14.7rem;
+  }
+
+  &-form {
+    margin-bottom: 16rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 0rem;
+    }
+  }
+}
