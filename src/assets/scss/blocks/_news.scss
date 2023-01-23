@@ -10,6 +10,15 @@
     row-gap: 7rem;
     margin-bottom: 10rem;
 
+    @include breakpoint($xl-bp) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 4rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      grid-template-columns: 1fr;
+    }
+
     &-item {
       &:hover & {
         &-img__img {
@@ -21,6 +30,14 @@
         display: flex;
         flex-direction: column;
         height: 63.3rem;
+
+        @include breakpoint($xl-bp) {
+          height: 53rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          height: 41.7rem;
+        }
       }
 
       &-img {
@@ -28,6 +45,14 @@
         height: 40.7rem;
         overflow: hidden;
         margin-bottom: 2rem;
+
+        @include breakpoint($cos-bp) {
+          height: 33.7rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          height: 25.3rem;
+        }
 
         &__img {
           object-fit: cover;
@@ -43,12 +68,22 @@
         line-height: 5.5rem;
         font-weight: $f-m;
         margin-bottom: 1rem;
+
+        @include breakpoint($xl-bp) {
+          font-size: 2.6rem;
+          line-height: 3.6rem;
+        }
       }
 
       &__text {
         font-size: 2rem;
         line-height: 2.7rem;
         flex: 1;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
       }
 
       &-nav {
@@ -82,6 +117,11 @@
     justify-content: center;
     gap: 5rem;
 
+    @include breakpoint($sm-bp) {
+      gap: 0rem;
+      justify-content: space-between;
+    }
+
     &__link {
       font-size: 1.6rem;
       line-height: 2.2rem;
@@ -93,12 +133,21 @@
       &:hover {
         opacity: 0.5;
       }
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+      }
     }
 
     &-list {
       display: flex;
       align-items: center;
       gap: 2rem;
+
+      @include breakpoint($xl-bp) {
+        gap: 1.5rem;
+      }
 
       &-item {
         &__link {
@@ -117,6 +166,11 @@
             padding: 0 0.45rem 0.5rem;
             color: $blue;
             border-bottom: 0.1rem solid $blue;
+          }
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
           }
         }
       }
