@@ -1,0 +1,125 @@
+@import "../vars";
+
+.news {
+  margin-bottom: 16rem;
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    row-gap: 7rem;
+    margin-bottom: 10rem;
+
+    &-item {
+      &:hover & {
+        &-img__img {
+          transform: scale(1.05);
+        }
+      }
+
+      &__link {
+        display: flex;
+        flex-direction: column;
+        height: 63.3rem;
+      }
+
+      &-img {
+        width: 100%;
+        height: 40.7rem;
+        overflow: hidden;
+        margin-bottom: 2rem;
+
+        &__img {
+          object-fit: cover;
+          object-position: center center;
+          width: 100%;
+          height: 100%;
+          transition: .3s;
+        }
+      }
+
+      &__title {
+        font-size: 4rem;
+        line-height: 5.5rem;
+        font-weight: $f-m;
+        margin-bottom: 1rem;
+      }
+
+      &__text {
+        font-size: 2rem;
+        line-height: 2.7rem;
+        flex: 1;
+      }
+
+      &-nav {
+        padding-top: 1.5rem;
+        border-top: 0.1rem solid #E2E2E2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &__date {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+
+      &__icon {
+        width: 8.4rem;
+        height: 2.2rem;
+        fill: $blue;
+
+        &:hover {
+          transform: translate(0.5rem, 0);
+        }
+      }
+    }
+  }
+
+  &-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    &__link {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      font-weight: $f-m;
+      color: $blue;
+      border-bottom: 1px dashed $blue;
+      transition: .3s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      &-item {
+        &__link {
+          display: inline-block;
+          font-size: 2rem;
+          line-height: 2.7rem;
+          padding: 0 0 0.5rem;
+          border-bottom: 0.1rem solid transparent;
+          transition: .3s;
+
+          &:hover {
+            opacity: 0.5;
+          }
+
+          &._active {
+            padding: 0 0.45rem 0.5rem;
+            color: $blue;
+            border-bottom: 0.1rem solid $blue;
+          }
+        }
+      }
+    }
+  }
+}

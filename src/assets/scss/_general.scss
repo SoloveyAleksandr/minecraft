@@ -50,6 +50,15 @@ html {
     }
   }
 
+  &_dark {
+    color: $white;
+    background-color: $blue;
+
+    svg {
+      fill: $white;
+    }
+  }
+
   @include breakpoint($xl-bp) {
     font-size: 1.4rem;
     line-height: 1.9rem;
