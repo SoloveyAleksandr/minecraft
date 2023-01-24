@@ -285,9 +285,10 @@ document.addEventListener("DOMContentLoaded", () => {
   //<==
 
   // CATALOG-NAV
-  const dropdownConteiners = gsap.utils.toArray('.catalog-nav-dropdown');
+  const catalogNavContainer = document.querySelector(".catalog-nav");
+  const dropdownConteiners = gsap.utils.toArray(".catalog-nav-dropdown");
 
-  if (dropdownConteiners.length > 0) {
+  if (catalogNavContainer) {
     class Dropdown {
       constructor(container) {
         this.container = container;
@@ -300,7 +301,11 @@ document.addEventListener("DOMContentLoaded", () => {
       init() {
         this.maxHeight = this.content.clientHeight / 10 + "rem";
         this.btn.onclick = this.toggleActive.bind(this);
-        this.close();
+        if (this.container.getAttribute("data-open") !== null) {
+          this.open();
+        } else {
+          this.close();
+        }
       }
 
       toggleActive() {
@@ -324,9 +329,34 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    dropdownConteiners.forEach(container => {
-      new Dropdown(container);
-    })
+    const catalogNavContent = catalogNavContainer.querySelector('.catalog-nav-inner');
+    const catalogNavBtn = catalogNavContainer.querySelector('.catalog-nav-btn');
+    const maxHeight = catalogNavContent.clientHeight / 10 + "rem";
+
+    const toggleNav = () => {
+      if (catalogNavContainer.classList.contains("_active")) {
+        catalogNavContainer.classList.remove("_active");
+        catalogNavContent.style.maxHeight = 0;
+      } else {
+        catalogNavContainer.classList.add("_active");
+        catalogNavContent.style.maxHeight = maxHeight;
+      }
+    }
+
+    const createDropDownBtns = () => {
+      dropdownConteiners.forEach(container => {
+        new Dropdown(container);
+      })
+    }
+
+    if (window.matchMedia("(min-width: 1330)").matches) {
+      createDropDownBtns();
+    } else {
+      catalogNavContainer.classList.remove("_active");
+      catalogNavContent.style.maxHeight = 0;
+      catalogNavBtn.addEventListener("click", toggleNav);
+      createDropDownBtns();
+    }
   }
   //<==
 })
