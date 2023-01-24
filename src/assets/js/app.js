@@ -283,4 +283,50 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   //<==
+
+  // CATALOG-NAV
+  const dropdownConteiners = gsap.utils.toArray('.catalog-nav-dropdown');
+
+  if (dropdownConteiners.length > 0) {
+    class Dropdown {
+      constructor(container) {
+        this.container = container;
+        this.btn = this.container.querySelector('.catalog-nav-dropdown-btn');
+        this.content = this.container.querySelector('.catalog-nav-dropdown-content');
+        this.isActive = false;
+        this.init();
+      }
+
+      init() {
+        this.maxHeight = this.content.clientHeight / 10 + "rem";
+        this.btn.onclick = this.toggleActive.bind(this);
+        this.close();
+      }
+
+      toggleActive() {
+        if (this.isActive) {
+          this.close.call(this);
+        } else {
+          this.open.call(this);
+        }
+      }
+
+      close() {
+        this.container.classList.remove('_active');
+        this.content.style.maxHeight = 0;
+        this.isActive = false;
+      }
+
+      open() {
+        this.container.classList.add('_active');
+        this.content.style.maxHeight = this.maxHeight;
+        this.isActive = true;
+      }
+    }
+
+    dropdownConteiners.forEach(container => {
+      new Dropdown(container);
+    })
+  }
+  //<==
 })
