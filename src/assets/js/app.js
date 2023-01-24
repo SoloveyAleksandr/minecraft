@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
 
-    if (window.matchMedia("(min-width: 1330)").matches) {
+    if (window.matchMedia("(min-width: 1331px)").matches) {
       createDropDownBtns();
     } else {
       catalogNavContainer.classList.remove("_active");
