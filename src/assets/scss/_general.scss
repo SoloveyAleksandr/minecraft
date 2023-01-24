@@ -89,11 +89,12 @@ html {
     gap: 3rem;
   }
 
-  &.page-head_white &{
+  &.page-head_white & {
     &-links {
       &__link {
         &:last-child {
           color: $white;
+
           &::before {
             background-color: $white;
           }
@@ -110,6 +111,7 @@ html {
     display: flex;
     align-items: center;
     gap: 0.7rem;
+    flex-wrap: wrap;
 
     &__link {
       font-size: 1.6rem;
@@ -119,6 +121,7 @@ html {
 
       &:last-child {
         color: $black;
+
         &::before {
           background-color: $black;
         }

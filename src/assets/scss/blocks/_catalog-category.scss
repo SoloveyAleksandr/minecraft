@@ -14,6 +14,10 @@
     gap: 3rem;
     row-gap: 3rem;
 
+    @include breakpoint($cos-bp) {
+      width: 100%;
+    }
+
     @include breakpoint($jb-bp) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -31,12 +35,6 @@
 
       &:hover {
         box-shadow: 0 0 0.2rem #E2E2E2;
-      }
-
-      &:hover & {
-        &-img__img {
-          transform: scale(0.95);
-        }
       }
 
       @include breakpoint($xl-bp) {
@@ -75,7 +73,6 @@
           object-position: center center;
           width: 100%;
           height: 100%;
-          transition: .3s;
         }
       }
 
@@ -88,6 +85,107 @@
         @include breakpoint($xl-bp) {
           font-size: 1.4rem;
           line-height: 1.9rem;
+        }
+      }
+
+      &.catalog-category-list-item_label {
+        position: relative;
+        height: 41.3rem;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint($xl-bp) {
+          height: 33.3rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          height: 24.5rem;
+        }
+      }
+
+      &.catalog-category-list-item_label & {
+        &__link {
+          padding-top: 0;
+          height: unset;
+          flex: 1;
+        }
+
+        &-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 2rem 2rem 0rem;
+
+          @include breakpoint($xl-bp) {
+            padding: 1rem 1rem 0rem;
+          }
+        }
+
+        &-label {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          font-weight: $f-m;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          white-space: nowrap;
+
+          svg {
+            width: 1.9rem;
+            height: 1.9rem;
+            object-fit: contain;
+          }
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+
+            svg {
+              width: 0.9rem;
+              height: 0.9rem;
+            }
+          }
+        }
+
+        &-btn {
+          border: none;
+          background-color: transparent;
+          margin: 0;
+          padding: 0;
+          width: 3.3rem;
+          height: 3.4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: .3s;
+
+          &._active {
+            svg {
+              fill: $blue;
+            }
+          }
+
+          svg {
+            width: 2.75rem;
+            height: 2.6rem;
+            object-fit: contain;
+            fill: transparent;
+            stroke: $blue;
+          }
+
+          &:hover {
+            opacity: 0.5;
+          }
+
+          @include breakpoint($xl-bp) {
+            width: 1.9rem;
+            height: 1.7rem;
+
+            svg {
+              width: 100%;
+              height: 100%;
+            }
+          }
         }
       }
     }
