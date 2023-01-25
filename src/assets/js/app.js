@@ -359,4 +359,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   //<==
+
+  // PRODUCT
+  if (document.querySelector(".product-swiper")) {
+    const swiper = new Swiper(".product-swiper", {
+      spaceBetween: 30,
+      freeMode: true,
+      navigation: {
+        nextEl: '.reviews-btns__btn_next',
+        prevEl: '.reviews-btns__btn_prev',
+      },
+      slidesPerView: 4,
+    })
+  }
+  //<==
 })
