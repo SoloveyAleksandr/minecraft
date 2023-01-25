@@ -93,9 +93,11 @@
         height: 41.3rem;
         display: flex;
         flex-direction: column;
+        padding: 2rem 0 2rem;
 
         @include breakpoint($xl-bp) {
           height: 33.3rem;
+          padding: 1rem 0;
         }
 
         @include breakpoint($sm-bp) {
@@ -106,6 +108,7 @@
       &.catalog-category-list-item_label & {
         &__link {
           padding-top: 0;
+          padding-bottom: 0;
           height: unset;
           flex: 1;
         }
@@ -114,7 +117,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 2rem 2rem 0rem;
+          padding: 0rem 2rem 0rem;
 
           @include breakpoint($xl-bp) {
             padding: 1rem 1rem 0rem;
@@ -185,6 +188,87 @@
               width: 100%;
               height: 100%;
             }
+          }
+        }
+      }
+
+      &.catalog-category-list-item_btn {
+        height: 48.5rem;
+
+        @include breakpoint($xl-bp) {
+          height: 40.5rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          height: 28rem;
+        }
+
+        @include breakpoint($xs-bp) {
+          position: relative;
+          padding: 0;
+          height: fit-content;
+        }
+      }
+
+      &.catalog-category-list-item_btn & {
+        &__form-btn {
+          width: calc(100% - 4rem);
+          margin: 1rem auto 0;
+
+          @include breakpoint($xl-bp) {
+            width: calc(100% - 2rem);
+          }
+
+          @include breakpoint($lb-bp) {
+            min-width: unset;
+            padding: 2rem 0;
+          }
+
+          @include breakpoint($xs-bp) {
+            position: absolute;
+            bottom: 2rem;
+            left: 13.6rem;
+            padding: 0;
+            background-color: transparent;
+            color: $blue;
+            width: fit-content;
+            border-bottom: 0.1rem dashed $blue;
+
+            svg {
+              display: none;
+            }
+          }
+        }
+
+        &-head {
+          @include breakpoint($xs-bp) {
+            position: absolute;
+            top: 2rem;
+            left: 13.6rem;
+            padding: 0;
+            width: 17.9rem;
+          }
+        }
+
+        &-img {
+          @include breakpoint($xs-bp) {
+            width: 10.6rem;
+            height: 9.3rem;
+          }
+        }
+
+        &__link {
+          @include breakpoint($xs-bp) {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            padding: 3rem 2rem;
+          }
+        }
+
+        &__title {
+          @include breakpoint($xs-bp) {
+            text-align: left;
           }
         }
       }
