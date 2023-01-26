@@ -299,7 +299,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       init() {
-        this.maxHeight = this.content.clientHeight / 10 + "rem";
+        this.maxHeight = (this.content.scrollHeight + this.content.children.length * 2 * 10) / 10 + "rem";
+        console.log(this.maxHeight)
         this.btn.onclick = this.toggleActive.bind(this);
         if (this.container.getAttribute("data-open") !== null) {
           this.open();
@@ -319,12 +320,14 @@ document.addEventListener("DOMContentLoaded", () => {
       close() {
         this.container.classList.remove('_active');
         this.content.style.maxHeight = 0;
+        // this.content.style.overflowY = "hidden";
         this.isActive = false;
       }
 
       open() {
         this.container.classList.add('_active');
         this.content.style.maxHeight = this.maxHeight;
+        // this.content.style.overflowY = "auto";
         this.isActive = true;
       }
     }

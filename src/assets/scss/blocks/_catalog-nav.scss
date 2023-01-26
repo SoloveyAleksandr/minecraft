@@ -92,6 +92,7 @@
 
       &-content {
         padding: 2rem 0rem 1rem 2rem;
+        // overflow-y: auto;
       }
     }
 
@@ -129,6 +130,26 @@
       gap: 1rem;
       overflow: hidden;
       transition: .3s;
+
+      // &::-webkit-scrollbar {
+      //   width: 1rem;
+      //   border-radius: 2rem;
+      //   /* ширина scrollbar */
+      // }
+
+      // &::-webkit-scrollbar-track {
+      //   background: $grey;
+      //   /* цвет дорожки */
+      // }
+
+      // &::-webkit-scrollbar-thumb {
+      //   background-color: rgb(223, 223, 223);
+      //   /* цвет плашки */
+      //   border-radius: 2rem;
+      //   /* закругления плашки */
+      //   border: 0.3rem solid rgb(223, 223, 223);
+      //   /* padding вокруг плашки */
+      // }
     }
 
     &_main>& {
