@@ -136,6 +136,7 @@
         border: none;
         background-color: transparent;
         transition: .3s;
+        position: relative;
 
         &:hover {
           opacity: 0.5;
@@ -162,6 +163,101 @@
             svg {
               fill: $white;
             }
+          }
+        }
+      }
+
+      &__label {
+        position: absolute;
+        top: -0.6rem;
+        right: -0.7rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: $blue;
+        color: $white;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        font-weight: $f-b;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+    }
+
+    &-search {
+      position: relative;
+
+      @include breakpoint($sm-bp) {
+        position: static;
+      }
+
+      &-input {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        top: -1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: #fff;
+        border: 0.1rem solid #E2E2E2;
+        padding: 0 0 0 1.9rem;
+        width: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition: .3s;
+        overflow: hidden;
+
+        @include breakpoint($sm-bp) {
+          top: 4rem;
+          left: 2rem;
+          width: calc(100% - 4rem);
+          padding-left: 1rem;
+        }
+
+        &._active {
+          width: 62.8rem;
+          opacity: 1;
+          pointer-events: all;
+
+          @include breakpoint($jb-bp) {
+            width: 45rem;
+          }
+
+          @include breakpoint($sm-bp) {
+            width: calc(100% - 4rem);
+          }
+        }
+
+        &__btn {
+          border: none;
+          background-color: transparent;
+          padding: 0;
+          width: 2.4rem;
+          height: 2.4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          svg {
+            object-fit: contain;
+            width: 90%;
+            height: 90%;
+            fill: #9398A0;
+          }
+        }
+
+        &__input {
+          flex: 1;
+          padding: 1.5rem 0rem 1.5rem 0.5rem;
+          border: none;
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          outline: none;
+
+          &::placeholder {
+            color: #9398A0;
           }
         }
       }

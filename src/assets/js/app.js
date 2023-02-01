@@ -89,11 +89,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   OPEN_SUBMIN_BTNS.forEach(btn => {
     btn.addEventListener("click", () => {
-      // console.log('qwer')
       FORM_MODAL.closeModal();
       SUBMIT_MODAL.openModal();
     })
   })
+
+  // HEADER 
+  if (document.querySelector(".header-nav-search")) {
+    class Search {
+      constructor() {
+        this.wrapper = document.querySelector(".header-nav-search");
+        this.container = this.wrapper.querySelector(".header-nav-search-input");
+        this.btn = this.wrapper.querySelector(".header-nav-search-btn");
+        this.input = this.wrapper.querySelector(".header-nav-search-input__input");
+        this.init();
+      }
+
+      init() {
+        this.btn.addEventListener("click", this.open.bind(this));
+        this.wrapper.addEventListener("click", (e) => e.stopPropagation());
+        document.addEventListener("click", this.close.bind(this));
+      }
+
+      open() {
+        this.container.classList.add("_active");
+        this.input.focus()
+      }
+
+      close() {
+        this.container.classList.remove("_active");
+        this.input.blur()
+      }
+    }
+
+    new Search();
+  }
+  
+  //<==
 
   // MENU
   if (MENU) {
@@ -300,7 +332,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       init() {
         this.maxHeight = (this.content.scrollHeight + this.content.children.length * 2 * 10) / 10 + "rem";
-        console.log(this.maxHeight)
         this.btn.onclick = this.toggleActive.bind(this);
         if (this.container.getAttribute("data-open") !== null) {
           this.open();

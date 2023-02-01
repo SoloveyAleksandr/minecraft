@@ -26,16 +26,28 @@
         </div>
 
         <div class="header-nav-btns">
-          <button class="header-nav-btns__btn">
-            <svg>
-              <use href="#search-icon"></use>
-            </svg>
-          </button>
+          <div class="header-nav-search">
+            <div class="header-nav-search-input">
+              <button type="button" class="header-nav-search-input__btn">
+                <svg>
+                  <use href="#search-icon"></use>
+                </svg>
+              </button>
+              <input class="header-nav-search-input__input" type="text" placeholder="Поиск">
+            </div>
+
+            <button class="header-nav-search-btn header-nav-btns__btn">
+              <svg>
+                <use href="#search-icon"></use>
+              </svg>
+            </button>
+          </div>
 
           <button class="header-nav-btns__btn header-nav-btns__btn_like">
             <svg>
               <use href="#like-icon"></use>
             </svg>
+            <span class="header-nav-btns__label">3</span>
           </button>
         </div>
       </div>
