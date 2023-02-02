@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     init() {
-      this.maxH = [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem";
+      this.maxH = this.content.children ? [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem" : "0rem";
       this.btn.onclick = this.handleClick.bind(this);
       if (this.btn.getAttribute('data-open-default') !== null) {
         this.open();
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       init() {
-        this.maxH = [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem";
+        this.maxH = this.content.children ? [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem" : "0rem";
         this.dropdownChildren = [...this.dropdownChildrenContainers].reduce((acc, item) => {
           const newClass = new Dropdown(item);
           return [...acc, newClass];
