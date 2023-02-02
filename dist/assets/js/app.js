@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
     MENU.classList.toggle('_active');
   }
 
-  MENU_OPEN_BTN.onclick = toggleMenu;
-  MENU_CLOSE_BTN.onclick = toggleMenu;
-  MENU_BG.onclick = toggleMenu;
+  MENU_OPEN_BTN && (MENU_OPEN_BTN.onclick = toggleMenu);
+  MENU_CLOSE_BTN && (MENU_CLOSE_BTN.onclick = toggleMenu);
+  MENU_BG && (MENU_BG.onclick = toggleMenu);
 
   CLOSE_MENU_BTNS.forEach(btn => {
     btn.addEventListener('click', toggleMenu)
@@ -78,20 +78,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  const FORM_MODAL = new Modal('.form-modal');
-  const SUBMIT_MODAL = new Modal('.submit-modal');
+  const FORM_MODAL = document.querySelector(".form-modal") ? new Modal('.form-modal') : null;
+  const SUBMIT_MODAL = document.querySelector(".submit-modal") ? new Modal('.submit-modal') : null;
 
   OPEN_FORM_BTNS.forEach(btn => {
-    btn.addEventListener("click", () => {
-      FORM_MODAL.openModal();
-    })
+    FORM_MODAL &&
+      (btn.addEventListener("click", () => {
+        FORM_MODAL.openModal();
+      }))
   })
 
   OPEN_SUBMIN_BTNS.forEach(btn => {
-    btn.addEventListener("click", () => {
-      FORM_MODAL.closeModal();
-      SUBMIT_MODAL.openModal();
-    })
+    (FORM_MODAL && SUBMIT_MODAL) &&
+      (btn.addEventListener("click", () => {
+        FORM_MODAL.closeModal();
+        SUBMIT_MODAL.openModal();
+      }))
   })
 
   // HEADER 
@@ -124,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new Search();
   }
-  
+
   //<==
 
   // MENU
