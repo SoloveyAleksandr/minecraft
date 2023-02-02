@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     init() {
-      this.maxH = this.content.children ? [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem" : "0rem";
+      this.maxH = this.content.children ? [...this.content.children].reduce((acc, item) => acc += item.scrollHeight * 2, 0) / 10 + "rem" : "0rem";
       this.btn.onclick = this.handleClick.bind(this);
       if (this.btn.getAttribute('data-open-default') !== null) {
         this.open();
