@@ -13,11 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
       this.btn = container.querySelector('.menu-nav-dropdown-btn');
       this.content = container.querySelector('.menu-nav-dropdown-content');
 
-      this.init();
+      if (this.btn && this.content) {
+        this.init();
+      }
     }
 
     init() {
-      this.maxH = this.content.children ? [...this.content.children].reduce((acc, item) => acc += item.scrollHeight * 2, 0) / 10 + "rem" : "0rem";
+      this.maxH = [...this.content.children].reduce((acc, item) => acc += item.scrollHeight * 2, 0) / 10 + "rem";
       this.btn.onclick = this.handleClick.bind(this);
       if (this.btn.getAttribute('data-open-default') !== null) {
         this.open();
@@ -138,11 +140,14 @@ document.addEventListener("DOMContentLoaded", () => {
         this.btn = container.querySelector('.menu-nav__btn');
         this.content = container.querySelector('.menu-nav-item-content');
         this.dropdownChildrenContainers = this.content.querySelectorAll('.menu-nav-dropdown');
-        this.init();
+
+        if (this.id, this.closeTrigger, this.btn, this.content, this.dropdownChildrenContainers) {
+          this.init();
+        }
       }
 
       init() {
-        this.maxH = this.content.children ? [...this.content.children].reduce((acc, item) => acc += item.clientHeight, 0) / 10 + "rem" : "0rem";
+        this.maxH = [...this.content.children].reduce((acc, item) => acc += item.scrollHeight * 2, 0) / 10 + "rem";
         this.dropdownChildren = [...this.dropdownChildrenContainers].reduce((acc, item) => {
           const newClass = new Dropdown(item);
           return [...acc, newClass];

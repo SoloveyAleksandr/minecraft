@@ -269,6 +269,7 @@
       }
 
       @include breakpoint($lb-bp) {
+        width: 100%;
         &._active {
           margin-bottom: 2rem;
         }
