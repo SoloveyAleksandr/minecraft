@@ -30,8 +30,10 @@
   }
 
   &-logo {
-    width: 9.5rem;
-    height: 11.4rem;
+    // width: 9.5rem;
+    // height: 11.4rem;
+    width: 11.4rem;
+    height: 13.68rem;
 
     @include breakpoint($xl-bp) {
       width: 6.1rem;
@@ -208,6 +210,18 @@
       @include breakpoint($xl-bp) {
         font-size: 1.2rem;
         line-height: 1.6rem;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+
+      svg {
+        width: 1.2em;
+        height: 1.2em;
+        stroke: $black;
       }
     }
 

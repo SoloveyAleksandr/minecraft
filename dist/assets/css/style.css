@@ -1649,6 +1649,10 @@ svg {
 }
 
 @media (max-width: 650px) {
+    .menu-nav__btn {
+        width: 100%;
+    }
+
     .menu-nav__btn._active {
         margin-bottom: 2rem;
     }

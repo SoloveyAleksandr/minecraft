@@ -510,6 +510,51 @@ html {
   }
 }
 
+.select {
+  width: 100%;
+  position: relative;
+}
+.select._open .select__btn svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.select._open .select-variants {
+  opacity: 1;
+  pointer-events: all;
+}
+.select__value {
+  display: none;
+}
+.select__btn {
+  position: relative;
+  white-space: nowrap;
+  padding-right: 5rem;
+}
+.select__btn svg {
+  position: absolute;
+  width: 1.8rem;
+  height: 100%;
+  top: 0;
+  right: 1.5rem;
+  fill: #0D35BC;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.select-variants {
+  position: absolute;
+  z-index: 20;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
 .page-head {
   padding: 3rem 0rem 4rem;
   display: -ms-flexbox;
@@ -997,8 +1042,8 @@ svg {
   }
 }
 .footer-logo {
-  width: 9.5rem;
-  height: 11.4rem;
+  width: 11.4rem;
+  height: 13.68rem;
 }
 @media (max-width: 1024px) {
   .footer-logo {
@@ -1190,6 +1235,18 @@ svg {
     font-size: 1.2rem;
     line-height: 1.6rem;
   }
+}
+.footer-contacts__icon {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  gap: 0.5em;
+}
+.footer-contacts__icon svg {
+  width: 1.2em;
+  height: 1.2em;
+  stroke: #010F26;
 }
 .footer-contacts a.footer-contacts__text,
 .footer-contacts a.footer-contacts__title {
@@ -1801,6 +1858,7 @@ svg {
   background-color: #FFFFFF;
   font-size: 1.6rem;
   line-height: 2.2rem;
+  text-align: left;
   border: 0.2rem solid #FFFFFF;
   padding: 1.8rem;
   width: 100%;
@@ -1929,6 +1987,33 @@ svg {
         justify-content: center;
     background-color: #F8F8F8;
   }
+}
+.default-form-select {
+  width: 100%;
+}
+.default-form-select__btn * {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.default-form-select__btn._placeholder {
+  color: #9398A0;
+}
+.default-form-select-variants {
+  background-color: #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+.default-form-select-variants__btn {
+  width: 100%;
+  background-color: #fff;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  text-align: left;
+  border: 0.2rem solid #FFFFFF;
+  padding: 1.8rem;
+}
+.default-form-select-variants__btn:hover {
+  background-color: #ebebeb;
 }
 
 .catalog-nav {

@@ -55,6 +55,7 @@
     background-color: $white;
     font-size: 1.6rem;
     line-height: 2.2rem;
+    text-align: left;
     border: 0.2rem solid $white;
     padding: 1.8rem;
     width: 100%;
@@ -87,7 +88,7 @@
   &__btn {
     margin-left: auto;
 
-    @include breakpoint($sm-bp)  {
+    @include breakpoint($sm-bp) {
       width: 100%;
     }
   }
@@ -168,6 +169,42 @@
     @include breakpoint($cos-bp) {
       justify-content: center;
       background-color: $grey;
+    }
+  }
+
+  &-select {
+    width: 100%;
+
+    &__btn {
+
+      * {
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+      }
+
+      &._placeholder {
+        color: $dark-grey;
+      }
+    }
+
+    &-variants {
+      background-color: #fff;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+
+      &__btn {
+        width: 100%;
+        background-color: #fff;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        text-align: left;
+        border: 0.2rem solid $white;
+        padding: 1.8rem;
+
+        &:hover {
+          background-color: #ebebeb;
+        }
+      }
     }
   }
 }

@@ -424,4 +424,61 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   //<==
+
+  class Select {
+    constructor(container) {
+      this.container = container;
+      this.btn = this.container.querySelector(".select__btn");
+      this.btnText = this.container.querySelector(".select__btn span");
+      this.selects = this.container.querySelectorAll(".select-variants__btn");
+      this.value = this.container.querySelector(".select__value");
+      this.isOpen = false;
+
+      if (this.container && this.btn && this.btnText && this.value) {
+        this.init();
+      }
+    }
+
+    init() {
+      document.addEventListener("click", this.close.bind(this));
+      this.btnText.innerText = this.btn.getAttribute("data-placeholder");
+      this.btn.classList.add("_placeholder");
+      this.btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.handleClick.call(this);
+      });
+
+      this.selects.forEach(item => {
+        const value = item.getAttribute("data-value");
+        item.addEventListener("click", this.setValue.bind(this, value, item.innerText));
+      })
+    }
+
+    handleClick() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+
+    open() {
+      this.isOpen = true;
+      this.container.classList.add("_open");
+    }
+
+    close() {
+      this.isOpen = false;
+      this.container.classList.remove("_open");
+    }
+
+    setValue(value, text) {
+      this.btn.classList.remove("_placeholder");
+      this.btnText.innerText = text;
+      this.value.value = value;
+    }
+  }
+
+  const selects = document.querySelectorAll(".select");
+  selects.forEach(item => new Select(item));
 })

@@ -70,6 +70,58 @@ html {
   }
 }
 
+.select {
+  width: 100%;
+  position: relative;
+
+  &._open & {
+    &__btn {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-variants {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__value {
+    display: none;
+  }
+
+  &__btn {
+    position: relative;
+    white-space: nowrap;
+    padding-right: 5rem;
+
+    svg {
+      position: absolute;
+      width: 1.8rem;
+      height: 100%;
+      top: 0;
+      right: 1.5rem;
+      fill: $blue;
+      pointer-events: none;
+      transition: .3s;
+    }
+  }
+
+  &-variants {
+    position: absolute;
+    z-index: 20;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+  }
+}
+
 // <a href="#" class="default-btn">
 //   Перейти в каталог
 //   <svg>

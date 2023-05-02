@@ -27,6 +27,24 @@
         <input type="text" class="default-form__input" placeholder="Имя">
         <input type="tel" class="default-form__input" placeholder="Телефон">
         <input type="email" class="default-form__input" placeholder="Адрес электронной почты">
+        <div class="select default-form-select">
+          <button type="button" class="select__btn default-form__input default-form-select__btn"
+            data-placeholder="Предмет обращения">
+            <span></span>
+            <svg>
+              <use href="#drop-arrow-icon"></use>
+            </svg>
+          </button>
+          <input type="text" name="#" id="#" class="select__value">
+          <div class="select-variants default-form-select-variants">
+            <button type="button" class="select-variants__btn default-form-select-variants__btn"
+              data-value="value-1">Заказ</button>
+            <button type="button" class="select-variants__btn default-form-select-variants__btn"
+              data-value="value-2">Просто так</button>
+            <button type="button" class="select-variants__btn default-form-select-variants__btn"
+              data-value="value-3">Консультация</button>
+          </div>
+        </div>
 
         <p class="default-form__info">Нажимая кнопку отправить, вы соглашаетесь на обработку персональных данных</p>
 
