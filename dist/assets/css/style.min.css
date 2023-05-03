@@ -711,16 +711,6 @@ svg {
   width: 9.5rem;
   height: 11.4rem;
   transition: 0.3s;
-  -webkit-transform-origin: right top;
-          transform-origin: right top;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-}
-@media (max-width: 1330px) {
-  .header-logo {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
 }
 @media (max-width: 1024px) {
   .header-logo {
@@ -739,6 +729,18 @@ svg {
   width: 100%;
   height: 100%;
   fill: #FFFFFF;
+}
+.header-logo._big {
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+@media (max-width: 1330px) {
+  .header-logo._big {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 .header-menu-btn {
   width: 3.2rem;
@@ -919,7 +921,7 @@ svg {
       align-items: center;
   gap: 0.5rem;
   background-color: #fff;
-  border: 0.1rem solid #E2E2E2;
+  border: 0.1rem solid #e2e2e2;
   padding: 0 0 0 1.9rem;
   width: 0;
   pointer-events: none;
@@ -968,7 +970,7 @@ svg {
      object-fit: contain;
   width: 90%;
   height: 90%;
-  fill: #9398A0;
+  fill: #9398a0;
 }
 .header-nav-search-input__input {
   -ms-flex: 1;
@@ -980,33 +982,29 @@ svg {
   outline: none;
 }
 .header-nav-search-input__input::-webkit-input-placeholder {
-  color: #9398A0;
+  color: #9398a0;
 }
 .header-nav-search-input__input::-moz-placeholder {
-  color: #9398A0;
+  color: #9398a0;
 }
 .header-nav-search-input__input:-ms-input-placeholder {
-  color: #9398A0;
+  color: #9398a0;
 }
 .header-nav-search-input__input::-ms-input-placeholder {
-  color: #9398A0;
+  color: #9398a0;
 }
 .header-nav-search-input__input::placeholder {
-  color: #9398A0;
+  color: #9398a0;
 }
 
 .header_white {
   background-color: #FFFFFF;
-  border-bottom: 0.1rem solid #E2E2E2;
+  border-bottom: 0.1rem solid #e2e2e2;
 }
 @media (max-width: 1024px) {
   .header_white {
     padding-bottom: 1rem;
   }
-}
-.header_white .header-logo {
-  -webkit-transform: none;
-          transform: none;
 }
 .header_white .header-logo svg {
   fill: #010F26;

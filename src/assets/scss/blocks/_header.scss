@@ -21,13 +21,7 @@
   &-logo {
     width: 9.5rem;
     height: 11.4rem;
-    transition: .3s;
-    transform-origin: right top;
-    transform: scale(1.5);
-
-    @include breakpoint($cos-bp) {
-      transform: scale(1);
-    }
+    transition: 0.3s;
 
     @include breakpoint($xl-bp) {
       width: 6.1rem;
@@ -44,6 +38,15 @@
       width: 100%;
       height: 100%;
       fill: $white;
+    }
+
+    &._big {
+      transform-origin: right top;
+      transform: scale(1.5);
+
+      @include breakpoint($cos-bp) {
+        transform: scale(1);
+      }
     }
   }
 
@@ -73,7 +76,7 @@
         width: 100%;
         object-position: center center;
         stroke: $blue;
-        transition: .3s;
+        transition: 0.3s;
       }
     }
   }
@@ -110,7 +113,7 @@
         font-size: 2.4rem;
         font-weight: $f-s;
         line-height: 3.3rem;
-        transition: .3s;
+        transition: 0.3s;
         display: flex;
         align-items: center;
         gap: 0.3em;
@@ -150,7 +153,7 @@
         padding: 0;
         border: none;
         background-color: transparent;
-        transition: .3s;
+        transition: 0.3s;
         position: relative;
 
         &:hover {
@@ -164,7 +167,7 @@
           object-position: center center;
           width: 2.8rem;
           height: 2.8rem;
-          transition: .3s;
+          transition: 0.3s;
         }
 
         &_like {
@@ -216,12 +219,12 @@
         align-items: center;
         gap: 0.5rem;
         background-color: #fff;
-        border: 0.1rem solid #E2E2E2;
+        border: 0.1rem solid #e2e2e2;
         padding: 0 0 0 1.9rem;
         width: 0;
         pointer-events: none;
         opacity: 0;
-        transition: .3s;
+        transition: 0.3s;
         overflow: hidden;
 
         @include breakpoint($sm-bp) {
@@ -259,7 +262,7 @@
             object-fit: contain;
             width: 90%;
             height: 90%;
-            fill: #9398A0;
+            fill: #9398a0;
           }
         }
 
@@ -272,7 +275,7 @@
           outline: none;
 
           &::placeholder {
-            color: #9398A0;
+            color: #9398a0;
           }
         }
       }
@@ -282,7 +285,7 @@
 
 .header_white {
   background-color: $white;
-  border-bottom: 0.1rem solid #E2E2E2;
+  border-bottom: 0.1rem solid #e2e2e2;
 
   @include breakpoint($xl-bp) {
     padding-bottom: 1rem;
@@ -290,8 +293,6 @@
 
   .header {
     &-logo {
-      transform: none;
-
       svg {
         fill: $black;
       }
@@ -301,7 +302,7 @@
       &-btn {
         &:hover {
           svg {
-            stroke: $black
+            stroke: $black;
           }
         }
 
