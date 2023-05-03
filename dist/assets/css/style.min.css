@@ -711,6 +711,16 @@ svg {
   width: 9.5rem;
   height: 11.4rem;
   transition: 0.3s;
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+@media (max-width: 1330px) {
+  .header-logo {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 @media (max-width: 1024px) {
   .header-logo {
@@ -801,6 +811,11 @@ svg {
   font-weight: 600;
   line-height: 3.3rem;
   transition: 0.3s;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  gap: 0.3em;
 }
 @media (max-width: 1024px) {
   .header-nav-links__link {
@@ -809,6 +824,11 @@ svg {
 }
 .header-nav-links__link:hover {
   opacity: 0.5;
+}
+.header-nav-links__link svg {
+  width: 1.2em;
+  height: 1.2em;
+  stroke: #FFFFFF;
 }
 .header-nav-btns {
   display: -ms-flexbox;
@@ -984,6 +1004,10 @@ svg {
     padding-bottom: 1rem;
   }
 }
+.header_white .header-logo {
+  -webkit-transform: none;
+          transform: none;
+}
 .header_white .header-logo svg {
   fill: #010F26;
 }
@@ -995,6 +1019,9 @@ svg {
 }
 .header_white .header-nav-links__link {
   color: #010F26;
+}
+.header_white .header-nav-links__link svg {
+  stroke: #010F26;
 }
 .header_white .header-nav-btns__btn svg {
   fill: #010F26;
@@ -1439,9 +1466,19 @@ svg {
   line-height: 2.7rem;
   font-weight: 500;
   transition: 0.3s;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  gap: 0.3em;
 }
 .menu-head__link:hover {
   opacity: 0.5;
+}
+.menu-head__link svg {
+  width: 1.2em;
+  height: 1.2em;
+  stroke: #010F26;
 }
 .menu-head-btn {
   background-color: #0D35BC;
